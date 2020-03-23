@@ -6,8 +6,11 @@ context('Actions', () => {
   })
 
   it('All + elements are clickable', () => {
-    cy.get('.step-up')[0].click()
-
+    cy.get('.step-up')
+      .each(function ($el) {
+        $el.click()
+      })
+    
     // This gets the "first" input from the sidebar. From clicking step up,
     // the number of days to project should increase from default 60 to 70.
     cy.get('input.st-al')
