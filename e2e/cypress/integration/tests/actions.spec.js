@@ -8,7 +8,7 @@ context('Actions', () => {
   it('All + elements are clickable', () => {
     cy.get('.step-up')
       .each(function ($el) {
-        $el.click()
+        cy.wrap($el).click()
       })
     
     // This gets the "first" input from the sidebar. From clicking step up,
